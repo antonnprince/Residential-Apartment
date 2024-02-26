@@ -1,34 +1,22 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import {Canvas} from "@react-three/fiber";
+import { Suspense } from "react";
+import Building from "./models/Building";
+import { Center } from "@react-three/drei";
+
 
 function App() {
-  const [count, setCount] = useState(0)
-
-  return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+  return(
+    <section className="w-full">
+      <Canvas 
+      className="w-full h-auto  bg-transparent cursor-grabbing"
+      >
+  
+         <directionalLight position={[1,1,1]} intensity={2} />
+          <ambientLight  intensity={0.5}/>
+          <hemisphereLight skyColor="#b1e1ff" groundColor="#000000" intensity={1}/>
+          <Building  position={ [300, -500,-100]} scale={[0.5, 0.5, 0.5]}/>
+      </Canvas>
+    </section>
   )
 }
 
