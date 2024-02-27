@@ -1,11 +1,12 @@
 import {Canvas} from "@react-three/fiber";
-import { Suspense } from "react";
+import { Suspense, useRef } from "react";
 import Building from "./models/Building";
-import { Center } from "@react-three/drei";
 import Building1 from "./models/Building1";
 
 
 function App() {
+
+  
   return(
     <section className="w-full h-screen relative bg-slate-500">
     
