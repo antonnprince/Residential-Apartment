@@ -10,7 +10,7 @@ function App() {
     <section className="w-full h-screen relative bg-slate-500">
     
       <Canvas 
-        className="w-full h-screen bg-transparent"
+        className="w-full h-screen bg-transparent cursor-grab"
       >
          <directionalLight position={[1,1,1]} intensity={1} camera={{near:0.01, far: 1000}}/>
           <ambientLight  intensity={0.25}/>
