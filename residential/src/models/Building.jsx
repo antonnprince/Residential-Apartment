@@ -39,11 +39,11 @@ const Building = (props) => {
 
         const delta = (clientX - lastX.current) / window.innerWidth;
 
-        buildref.current.rotation.y += delta * 0.05 * Math.PI;
+        buildref.current.rotation.y += delta * 0.1 * Math.PI;
 
         lastX.current = clientX;
 
-        rotationSpeed.current = delta * 0.05 * Math.PI;
+        rotationSpeed.current = delta * 0.1 * Math.PI;
       }
     };
 
@@ -51,12 +51,12 @@ const Building = (props) => {
       if (event.key === "ArrowLeft") {
         if (!isRotating) setIsRotating(true);
 
-        buildref.current.rotation.y -= 0.005 * Math.PI;
+        buildref.current.rotation.y -= 0.01 * Math.PI;
         rotationSpeed.current = -0.007;
       } else if (event.key === "ArrowRight") {
         if (!isRotating) setIsRotating(true);
 
-        buildref.current.rotation.y += 0.005 * Math.PI;
+        buildref.current.rotation.y += 0.01 * Math.PI;
         rotationSpeed.current = 0.007;
       }
     };
@@ -92,11 +92,14 @@ const Building = (props) => {
       }
 
       buildref.current.rotation.y += rotationSpeed.current;
+    
+    
+    
     }
   });
 
   return (
-    <a.group {...props} dispose={null} ref={buildref}>
+    <a.group {...props} dispose={null} ref={buildref} rotation={[-Math.PI/2,0,0]}>
         <mesh
           castShadow
           receiveShadow

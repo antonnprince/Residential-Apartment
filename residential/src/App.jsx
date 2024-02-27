@@ -15,7 +15,7 @@ function App() {
          <directionalLight position={[1,1,1]} intensity={1} camera={{near:0.01, far: 1000}}/>
           <ambientLight  intensity={0.25}/>
           <hemisphereLight skyColor="#b1e1ff" groundColor="#000000" intensity={1}/>
-          <Building position={[0, -10,-10]} scale={[0.02, 0.02, 0.02]}/>
+          <Building position={[0, -10,-10]} scale={[0.01, 0.01, 0.01]}/>
       </Canvas>
    
     </section>
